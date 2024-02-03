@@ -18,11 +18,8 @@ NotifyOnNewObject("/Game/Pal/Blueprint/Character/Monster/BP_MonsterBase.BP_Monst
     end)
 end)
 
-print("CaptureSuccessEvent hook")
 RegisterHook("/Game/Pal/Blueprint/Weapon/Other/NewPalSphere/BP_PalSphere_Body.BP_PalSphere_Body_C:CaptureSuccessEvent", function(self)
-    print("CaptureSuccessEvent call for all mods")
     DoAllMods(function (Mod)
-        print("CaptureSuccessEvent called")
         local PHPalCaptureSuccess = Mod.PHPalCaptureSuccess
         if PHPalCaptureSuccess:IsValid() then
             Mod:PHPalCaptureSuccess()
